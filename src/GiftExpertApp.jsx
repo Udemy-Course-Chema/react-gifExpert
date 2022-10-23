@@ -6,7 +6,7 @@ import { GifGrid } from './components/GifGrid';
 
 export const GiftExpertApp = () => {
 
-     const [categories, setCategories] = useState(['Demon Slayer', 'Naruto', 'Yu-Gi-Oh']);
+     const [categories, setCategories] = useState(['Demon Slayer']);
 
      const onAddCategory = ( newCategory ) => {
           // Validar que no sea duplicados
