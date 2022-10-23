@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { AddCategory } from './components/AddCategory';
+import { GifGrid } from './components/GifGrid';
 
 
 
@@ -11,9 +12,8 @@ export const GiftExpertApp = () => {
           // Validar que no sea duplicados
           // Si existe duplicado, no que hacer nada. (Sólo basta con return)
           if( categories.includes( newCategory ) ) return; 
-          // console.log('One Piece') Debug
+
           setCategories([...categories, newCategory ]); // Primera solución, mejor.
-          //setCategories( cat => [...cat, 'One Piece' ] );  Segunda solución 
      };
 
      return (
@@ -23,29 +23,13 @@ export const GiftExpertApp = () => {
 
                {/* INPUT */}
                <AddCategory
-                    // setCategories={setCategories}
                     onNewCategory={ value => onAddCategory( value ) }
                />
                {/* LISTADO DE GIF */}
-               {/* <button onClick={ onAddCategory }>Agregar</button> */}
-               <ol>
-                    {/* IMPLICITO */}
-                    {categories.map( ( category ) => (
-                              <div key={ category }>
-                                   <li> {category} </li>
-                              </div>
-                         )
-                    )}
-                    {/* EXPLICITO */}
-                    {/* {categories.map( ( category ) => {
-                         return (
-                              <div key={ category }>
-                                   <li> {category} </li>
-                              </div>
-                         )
-                    })} */}
-               </ol>
-               {/* GIT ITEM */}
+               {categories.map( ( category ) => (
+                         <GifGrid key={ category } category={ category }  />
+                    )
+               )}
           </>
      );
 };
