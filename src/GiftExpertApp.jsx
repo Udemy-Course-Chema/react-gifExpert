@@ -29,9 +29,21 @@ export const GiftExpertApp = () => {
                {/* LISTADO DE GIF */}
                {/* <button onClick={ onAddCategory }>Agregar</button> */}
                <ol>
-                    {categories.map( ( category ) => {
-                         return <li key={ category } > {category} </li>
-                    })}
+                    {/* IMPLICITO */}
+                    {categories.map( ( category ) => (
+                              <div key={ category }>
+                                   <li> {category} </li>
+                              </div>
+                         )
+                    )}
+                    {/* EXPLICITO */}
+                    {/* {categories.map( ( category ) => {
+                         return (
+                              <div key={ category }>
+                                   <li> {category} </li>
+                              </div>
+                         )
+                    })} */}
                </ol>
                {/* GIT ITEM */}
           </>
