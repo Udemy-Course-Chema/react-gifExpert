@@ -8,7 +8,9 @@ export const GiftExpertApp = () => {
      const [categories, setCategories] = useState(['Demon Slayer', 'Naruto', 'Yu-Gi-Oh']);
 
      const onAddCategory = ( newCategory ) => {
-          
+          // Validar que no sea duplicados
+          // Si existe duplicado, no que hacer nada. (Sólo basta con return)
+          if( categories.includes( newCategory ) ) return; 
           // console.log('One Piece') Debug
           setCategories([...categories, newCategory ]); // Primera solución, mejor.
           //setCategories( cat => [...cat, 'One Piece' ] );  Segunda solución 
@@ -27,8 +29,8 @@ export const GiftExpertApp = () => {
                {/* LISTADO DE GIF */}
                {/* <button onClick={ onAddCategory }>Agregar</button> */}
                <ol>
-                    {categories.map(category => {
-                         return <li key={category} > {category} </li>
+                    {categories.map( ( category ) => {
+                         return <li key={ category } > {category} </li>
                     })}
                </ol>
                {/* GIT ITEM */}

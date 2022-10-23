@@ -3,9 +3,6 @@ import { useState } from 'react';
 
 export const AddCategory = ( { onNewCategory } ) => {
 
-
-
-
      const [inputValue, setInputValue] = useState( '' );
 
      const onInputChange = ({ target }) => {
@@ -21,7 +18,6 @@ export const AddCategory = ( { onNewCategory } ) => {
           onNewCategory( inputValue.trim() );
           setInputValue('');
      };
-
 
      return (
           // <form onSubmit={ (e) => onSubmit(e) }>
